@@ -1,14 +1,13 @@
 # Modxo Designs
 A set of custom [Modxo](https://github.com/Team-Resurgent/modxo) boards.
 
-All boards have 128Mb (16MB) of flash and are designed to work with the YD RP2040
-variant of the Modxo firmware.
+All boards have 128Mb (16MB) of flash and use a custom board variant.
 
 ## Comparison
 
 | Feature | Micro | Mini | Mega |
 | ------- | ----- | ---- | ---- |
-| 128Mb (16MB) of flash supporting up to 16 BIOSes | ✅ | ✅ | ✅ |
+| 128Mb (16MB) of flash | ✅ | ✅ | ✅ |
 | On-board RGB LED | ✅ | ✅ | ✅ |
 | USB port for DFU Update | ✅ | ✅ | ✅ |
 | D0 Port/Solder Pad | ✅ | ✅ | ✅ |
