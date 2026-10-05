@@ -2123,7 +2123,6 @@
 				)
 			)
 			(embedded_fonts no)
-			(embedded_files)
 		)
 		(symbol "power:+3V3"
 			(power global)
