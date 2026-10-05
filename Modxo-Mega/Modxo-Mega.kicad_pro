@@ -542,105 +542,112 @@
       {
         "name": "D0",
         "pcb_color": "rgb(0, 174, 255)",
-        "priority": 3,
+        "priority": 4,
         "schematic_color": "rgb(0, 174, 255)",
         "tuning_profile": ""
       },
       {
         "name": "DBG",
         "pcb_color": "rgb(113, 144, 255)",
-        "priority": 13,
+        "priority": 14,
         "schematic_color": "rgb(113, 144, 255)",
         "tuning_profile": ""
       },
       {
         "name": "EXP",
         "pcb_color": "rgba(0, 0, 0, 0.000)",
-        "priority": 0,
+        "priority": 1,
         "schematic_color": "rgb(222, 255, 20)",
         "tuning_profile": ""
       },
       {
         "name": "GND",
         "pcb_color": "rgb(37, 37, 37)",
-        "priority": 10,
+        "priority": 11,
         "schematic_color": "rgb(37, 37, 37)",
         "tuning_profile": ""
       },
       {
         "name": "LAD",
         "pcb_color": "rgb(156, 149, 255)",
-        "priority": 5,
+        "priority": 6,
         "schematic_color": "rgb(156, 149, 255)",
         "tuning_profile": ""
       },
       {
         "name": "LCD",
         "pcb_color": "rgb(157, 16, 255)",
-        "priority": 8,
+        "priority": 9,
         "schematic_color": "rgb(157, 16, 255)",
         "tuning_profile": ""
       },
       {
         "name": "LED",
         "pcb_color": "rgb(0, 255, 0)",
-        "priority": 1,
+        "priority": 2,
         "schematic_color": "rgb(0, 255, 0)",
         "tuning_profile": ""
       },
       {
         "name": "LPC",
         "pcb_color": "rgb(90, 0, 255)",
-        "priority": 2,
+        "priority": 3,
         "schematic_color": "rgb(90, 0, 255)",
         "tuning_profile": ""
       },
       {
         "name": "OSC",
         "pcb_color": "rgb(255, 138, 221)",
-        "priority": 6,
+        "priority": 7,
         "schematic_color": "rgb(255, 138, 221)",
         "tuning_profile": ""
       },
       {
         "name": "PWR",
         "pcb_color": "rgb(255, 0, 0)",
-        "priority": 11,
+        "priority": 12,
         "schematic_color": "rgb(255, 0, 0)",
         "tuning_profile": ""
       },
       {
         "name": "QSPI",
         "pcb_color": "rgb(103, 231, 255)",
-        "priority": 9,
+        "priority": 10,
         "schematic_color": "rgb(103, 231, 255)",
         "tuning_profile": ""
       },
       {
         "name": "RGB",
         "pcb_color": "rgb(255, 183, 44)",
-        "priority": 12,
+        "priority": 13,
         "schematic_color": "rgb(255, 183, 44)",
+        "tuning_profile": ""
+      },
+      {
+        "name": "SD",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "priority": 0,
+        "schematic_color": "rgb(255, 204, 131)",
         "tuning_profile": ""
       },
       {
         "name": "UART",
         "pcb_color": "rgb(198, 255, 107)",
-        "priority": 7,
+        "priority": 8,
         "schematic_color": "rgb(198, 255, 107)",
         "tuning_profile": ""
       },
       {
         "name": "USB",
         "pcb_color": "rgb(69, 255, 117)",
-        "priority": 14,
+        "priority": 15,
         "schematic_color": "rgb(69, 255, 117)",
         "tuning_profile": ""
       },
       {
         "name": "XSMBUS",
         "pcb_color": "rgb(255, 0, 244)",
-        "priority": 4,
+        "priority": 5,
         "schematic_color": "rgb(255, 0, 244)",
         "tuning_profile": ""
       }
@@ -722,6 +729,14 @@
       {
         "netclass": "RGB",
         "pattern": "/MCU/RGB*"
+      },
+      {
+        "netclass": "SD",
+        "pattern": "/SD*"
+      },
+      {
+        "netclass": "PWR",
+        "pattern": "/Connectors/SD*"
       }
     ]
   },
@@ -742,7 +757,7 @@
       "method": 0,
       "sort_order": 0
     },
-    "bom_export_filename": "${PROJECTNAME}.csv",
+    "bom_export_filename": "bom.csv",
     "bom_fmt_presets": [],
     "bom_fmt_settings": {
       "field_delimiter": ",",
@@ -791,25 +806,103 @@
           "group_by": true,
           "label": "Exclude from Board",
           "name": "${EXCLUDE_FROM_BOARD}",
-          "show": true
+          "show": false
         },
         {
           "group_by": true,
           "label": "Footprint",
           "name": "Footprint",
-          "show": true
+          "show": false
         },
         {
           "group_by": false,
           "label": "Datasheet",
           "name": "Datasheet",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Manufacturer",
+          "name": "Manufacturer",
           "show": true
+        },
+        {
+          "group_by": false,
+          "label": "Manufacturer Part Number",
+          "name": "Manufacturer Part Number",
+          "show": true
+        },
+        {
+          "group_by": false,
+          "label": "Distributor Link 1",
+          "name": "Distributor Link 1",
+          "show": true
+        },
+        {
+          "group_by": false,
+          "label": "Distributor Link 2",
+          "name": "Distributor Link 2",
+          "show": true
+        },
+        {
+          "group_by": false,
+          "label": "LCSC",
+          "name": "LCSC",
+          "show": true
+        },
+        {
+          "group_by": false,
+          "label": "Sim.Pins",
+          "name": "Sim.Pins",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Distributor LInk 2",
+          "name": "Distributor LInk 2",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Description",
+          "name": "Description",
+          "show": true
+        },
+        {
+          "group_by": false,
+          "label": "#",
+          "name": "${ITEM_NUMBER}",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "KLC_S3.3",
+          "name": "KLC_S3.3",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "KLC_S4.1",
+          "name": "KLC_S4.1",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "KLC_S4.2_DVDD",
+          "name": "KLC_S4.2_DVDD",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "KLC_S4.2_VREG_VOUT",
+          "name": "KLC_S4.2_VREG_VOUT",
+          "show": false
         }
       ],
       "filter_string": "",
       "group_symbols": true,
       "include_excluded_from_bom": true,
-      "name": "Default Editing",
+      "name": "",
       "sort_asc": true,
       "sort_field": "Reference"
     },
@@ -854,7 +947,7 @@
         "uuid": "78f317fd-f467-4f4f-8425-bbff955df231"
       }
     ],
-    "used_designators": "#FLG2-4,R1-16,J1-7,J9-15,C1-21,LED1-3,#PWR1-16,#PWR19-74,RN1-2,U1-4,X1-2,D1-2,SW1-2",
+    "used_designators": "#FLG1-4,R1-16,J1-7,J9-15,C1-21,LED1-3,#PWR1-16,#PWR19-74,RN1-2,U1-4,X1-2,D1-2,SW1-2",
     "variants": []
   },
   "sheets": [
