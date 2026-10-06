@@ -735,8 +735,12 @@
         "pattern": "/SD*"
       },
       {
-        "netclass": "PWR",
+        "netclass": "SD",
         "pattern": "/Connectors/SD*"
+      },
+      {
+        "netclass": "PWR",
+        "pattern": "/MCU/+*"
       }
     ]
   },
